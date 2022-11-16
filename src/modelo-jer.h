@@ -1,4 +1,7 @@
-# include "grafo-escena.h"
+// Nombre: Germán José , Apellidos: Padua Pleguezuelo , Titulación: GIM .
+// email: germanpadua@correo.ugr.es , DNI: 77437393G
+
+#include "grafo-escena.h"
 #include "tup_mat.h"
 #include "objeto3d.h"
 

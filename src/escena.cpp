@@ -1,4 +1,5 @@
-
+// Nombre: Germán José , Apellidos: Padua Pleguezuelo , Titulación: GIM .
+// email: germanpadua@correo.ugr.es , DNI: 77437393G
 
 #include "ig-aux.h"
 #include "escena.h"
