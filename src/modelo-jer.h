@@ -53,7 +53,7 @@ class Rueda : public NodoGrafoEscena
 {
    protected:
    unsigned int num_parametros = 1;
-   Matriz4f *puntero = nullptr;
+   Matriz4f *giroRueda = nullptr;
 
    public:
    Rueda();
@@ -65,7 +65,6 @@ class Ruedas : public NodoGrafoEscena
 {
    protected:
    unsigned int num_parametros = 1;
-   Matriz4f *puntero = nullptr;
    Rueda *r1 = new Rueda();
    Rueda *r2 = new Rueda();
    Rueda *r3 = new Rueda();
@@ -74,13 +73,14 @@ class Ruedas : public NodoGrafoEscena
    Ruedas();
    virtual unsigned leerNumParametros() const;
    virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
+   
 };
 
 class TraccionConRuedas : public NodoGrafoEscena
 {
    protected:
    unsigned int num_parametros = 1;
-   Matriz4f *puntero = nullptr;
+   Matriz4f *escaladoTraslacionTraccion = nullptr;
    Ruedas *r = new Ruedas();
    public:
    TraccionConRuedas();
@@ -99,7 +99,7 @@ class CapoRotacion : public NodoGrafoEscena
 {
    protected:
    unsigned int num_parametros = 1;
-   Matriz4f *puntero = nullptr;
+   Matriz4f *giroCapo = nullptr;
 
 public:
    CapoRotacion();

@@ -37,7 +37,7 @@ Rueda::Rueda(){
    agregar (MAT_Escalado(0.4,0.25,0.4));
    agregar(new Cilindro(20, 20));
 
-   puntero = leerPtrMatriz(ind);
+   giroRueda = leerPtrMatriz(ind);
 }
 
 unsigned Rueda::leerNumParametros() const
@@ -50,7 +50,7 @@ void Rueda::actualizarEstadoParametro(const unsigned iParam, const float tSec)
   switch (iParam)
     {
     case 0:
-        (*puntero) = MAT_Rotacion( 30 * sin(2 * M_PI * tSec ), {0, 1, 0});
+        (*giroRueda) = MAT_Rotacion( 30 * sin(2 * M_PI * tSec ), {0, 1, 0});
         break;
     default:
         break;
@@ -104,7 +104,7 @@ TraccionConRuedas::TraccionConRuedas(){
    agregar(MAT_Traslacion({2.5,0.0,0.0}));
    agregar(new Traccion());
 
-   puntero = leerPtrMatriz(ind);
+   escaladoTraslacionTraccion = leerPtrMatriz(ind);
 }
 
 void TraccionConRuedas::actualizarEstadoParametro(const unsigned iParam, const float tSec)
@@ -121,7 +121,7 @@ void TraccionConRuedas::actualizarEstadoParametro(const unsigned iParam, const f
       r->actualizarEstadoParametro(0, tSec);
       break;   
    case 1:
-      (*puntero) = MAT_Escalado(1,1,1 + vel1) * MAT_Traslacion({0.0,0.0,vel2});
+      (*escaladoTraslacionTraccion) = MAT_Escalado(1,1,1 + vel1) * MAT_Traslacion({0.0,0.0,vel2});
       break;
    }
 }
@@ -186,7 +186,7 @@ CapoRotacion::CapoRotacion(){
    agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
    unsigned int ind = agregar(MAT_Rotacion(0.0, {0,0,1}));
    agregar(MAT_Traslacion({0.0, -1.0, 0.0}));
-   puntero = leerPtrMatriz(ind);
+   giroCapo = leerPtrMatriz(ind);
    agregar(new Capo());
 }
 
@@ -195,7 +195,7 @@ void CapoRotacion::actualizarEstadoParametro(const unsigned iParam, const float 
    switch (iParam)
    {
    case 0:
-      (*puntero) = MAT_Rotacion(- 75 * fabs(sin(2 * M_PI * tSec )), {0, 0, 1});
+      (*giroCapo) = MAT_Rotacion(- 75 * fabs(sin(2 * M_PI * tSec )), {0, 0, 1});
       break;
    default:
       break;
