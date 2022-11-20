@@ -5,18 +5,11 @@
 #include "tup_mat.h"
 #include "objeto3d.h"
 
-class C: public NodoGrafoEscena
-{
-   public:
-      C();
-      unsigned leerNumParametros() const;
-      void actualizarEstadoParametro(const unsigned iParam, const float tSec);
-};
 
-class Embellecedor : public NodoGrafoEscena
+class Llanta : public NodoGrafoEscena
 {
    public:
-   Embellecedor();
+   Llanta();
 };
 
 class Traccion : public NodoGrafoEscena

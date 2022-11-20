@@ -637,8 +637,6 @@ Prisma::Prisma()
     vertices.push_back({1.0, 0.0, 1.0});
     vertices.push_back({0.0, 0.0, 1.0});
 
-    
-
     triangulos.push_back({0, 1, 2});
     triangulos.push_back({0, 2, 3});
     triangulos.push_back({0, 3, 5});

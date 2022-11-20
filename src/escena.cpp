@@ -262,7 +262,6 @@ Escena3::Escena3()
 
    // añadir el objeto 'Cilindro' a la lista de objetos de esta escena:
    // objetos.push_back( new MallaRevolPLY("peon", 5) );
-   //objetos.push_back( new GrafoEstrellaX(8));
    objetos.push_back( new GrafoCubos());
    objetos.push_back( new GrafoEstrellaX(7));
    objetos.push_back( new GrafoEstrellaX(8));
